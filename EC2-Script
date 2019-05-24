@@ -1,0 +1,9 @@
+#!/bin/bash
+# Elevating Privileges
+sudo su
+# Installing httpd service
+yum update -y
+yum install -y httpd.x86_64
+systemctl start httpd.service
+systemctl enable httpd.service
+echo "Hello People from $(hostname -f)" > /var/www/html/index.html
